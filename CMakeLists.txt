@@ -12,6 +12,7 @@ if( BUILD_SHARED_LIBS )
    message( FATAL_ERROR "Shared libries are not supported ATM" )
 endif()
 
+message( STATUS "Shared libries ${CMAKE_CURRENT_LIST_DIR}" )
 set( CMAKE_CXX_STANDARD 17 )
 set( CMAKE_DEBUG_POSTFIX d )
 
@@ -27,19 +28,19 @@ if ( ARGUMENTUM_DEPRECATED_ATTR )
    add_definitions( -DARGUMENTUM_DEPRECATED_ATTR )
 endif()
 
-add_subdirectory( src )
-add_subdirectory( include )
+add_subdirectory( ${CMAKE_CURRENT_LIST_DIR}/src )
+add_subdirectory( ${CMAKE_CURRENT_LIST_DIR}/include )
 
-include( cmake/InstallConfig.cmake )
+include( ${CMAKE_CURRENT_LIST_DIR}/cmake/InstallConfig.cmake )
 
 if( ARGUMENTUM_BUILD_EXAMPLES )
-   add_subdirectory( example )
+   add_subdirectory( ${CMAKE_CURRENT_LIST_DIR}/example )
 endif()
 
 if( ARGUMENTUM_BUILD_TESTS )
    enable_testing()
-   add_subdirectory( test )
-   add_subdirectory( test/staticlib )
-   add_subdirectory( test/headerlib )
+   add_subdirectory( ${CMAKE_CURRENT_LIST_DIR}/test )
+   add_subdirectory( ${CMAKE_CURRENT_LIST_DIR}/test/staticlib )
+   add_subdirectory( ${CMAKE_CURRENT_LIST_DIR}/test/headerlib )
 endif()
 

@@ -1,5 +1,5 @@
 
-file( GLOB copied_headers "${CMAKE_SOURCE_DIR}/src/*.h" )
+file( GLOB copied_headers "${CMAKE_CURRENT_LIST_DIR}/../src/*.h" )
 
 add_custom_command(
    OUTPUT
@@ -13,7 +13,7 @@ add_custom_command(
 
    COMMAND ${CMAKE_COMMAND}
        -E copy
-       "${CMAKE_SOURCE_DIR}/util/faketarget.cpp"
+       "${CMAKE_CURRENT_LIST_DIR}/../util/faketarget.cpp"
        "${CMAKE_CURRENT_BINARY_DIR}/fake_create_headers.cpp"
 
    COMMAND ${CMAKE_COMMAND}

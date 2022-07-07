@@ -7,7 +7,7 @@ set( package_version ${PROJECT_VERSION} )
 set( generated_dir "${CMAKE_CURRENT_BINARY_DIR}/gen" CACHE INTERNAL "" )
 set( cmake_files_install_dir "${CMAKE_INSTALL_LIBDIR}/cmake/${cmake_package_name}" )
 set( version_file "${generated_dir}/${cmake_package_name}ConfigVersion.cmake" )
-set( config_file_in "cmake/ArgumentumConfig.cmake.in" )
+set( config_file_in "${CMAKE_CURRENT_LIST_DIR}/ArgumentumConfig.cmake.in" )
 set( config_file "${generated_dir}/${cmake_package_name}Config.cmake" )
 set( targets_export_name ${cmake_package_name}Targets CACHE INTERNAL "" )
 

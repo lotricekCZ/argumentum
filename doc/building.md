@@ -62,6 +62,6 @@ git submodule add https://github.com/mmahnic/argumentum.git 3rdparty/argumentum
 ### CMakeLists.txt
 
 ```
-include_directories( 3rdparty/argumenutm/include )
+include_directories( 3rdparty/argumentum/include )
 ```
 
